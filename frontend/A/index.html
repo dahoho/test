@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フロントエンドA</title>
+  <style>
+    .wrap {
+      padding-top: 100px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .updateButton {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <p class="js-message">
+      更新ボタンをクリックしてください。
+    </p>
+    <div class="updateButton js-updateButton">
+      <button type="button">更新</button>
+    </div>
+  </div>
+
+  <script>
+
+    const data = async () => {
+      const message = document.querySelector('.js-message');
+      try {
+        const url = 'https://catfact.ninja/fact';
+        const res = await fetch(url);
+        const json = await res.json();
+        const messageData = json.fact;
+
+        message.textContent = messageData;
+      } catch (error) {
+        message.textContent = "更新が失敗しました。";
+      }
+    }
+
+    const updateButton = document.querySelector('.js-updateButton');
+    updateButton.addEventListener('click', () => {
+      data();
+    });
+
+  </script>
+</body>
+
+</html>

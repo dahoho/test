@@ -1,0 +1,52 @@
+.wrap {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.box {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box__in {
+  width: 300px;
+}
+
+.box__item {
+  border: 1px solid navy;
+}
+
+.box__list {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 500px;
+}
+
+.box__list li {
+  border-bottom: 1px solid navy;
+  padding: 15px;
+  text-align: center;
+}
+
+.box__list li:last-of-type {
+  margin-bottom: 15px;
+}
+
+.moving-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.moving-button button {
+  font-weight: bold;
+  width: 150px;
+  height: 40px;
+  border: none;
+  background-color: navy;
+  color: white;
+  cursor: pointer;
+}
